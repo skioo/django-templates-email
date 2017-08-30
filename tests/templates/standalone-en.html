@@ -1,0 +1,33 @@
+{% block subject %}My subject for {{ username }}{% endblock %}
+
+{% block html %}
+<html>
+<head>
+<style>
+body {
+    background-color: linen;
+}
+
+p {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+</head>
+<body>
+    <p>Hi {{ full_name }},</p>
+
+    <p>You just signed up for my website, using:
+    <dl>
+        <dt>username</dt>
+        <dd>{{ username }}</dd>
+
+        <dt>join date</dt>
+        <dd>{{ joindate }}</dd>
+    </dl>
+    </p>
+
+    <p>Thanks, you rock!</p>
+</body>
+</html>
+{% endblock %}

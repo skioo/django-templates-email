@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block subject %}
+    Mon sujet pour {{ username }}
+{% endblock %}
+
+{% block body %}
+    <p>Bonjour {{ full_name }},</p>
+
+    <p>Vous venez de vous inscrire a mon site:
+    <dl>
+        <dt>nom d'utilisateur</dt>
+        <dd>{{ username }}</dd>
+
+        <dt>date d'inscription</dt>
+        <dd>{{ joindate }}</dd>
+    </dl>
+    </p>
+
+    <p>Merci!</p>
+{% endblock %}
