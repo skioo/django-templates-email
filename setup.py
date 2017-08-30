@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-import templates_email
-
 setup(
     name='django-templates-email',
-    version=templates_email.__version__,
+    version='0.1.1',
     description='',
     long_description='',
     author='Nicholas Wolff',
     author_email='nwolff@gmail.com',
-    url=templates_email.__URL__,
+    url='https://github.com/skioo/django-templates-email',
     packages=[
         'templates_email',
     ],
@@ -22,7 +20,7 @@ setup(
         'premailer',
         'lxml',
     ],
-    license=templates_email.__licence__,
+    license='BSD',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
