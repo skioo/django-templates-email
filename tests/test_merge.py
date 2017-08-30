@@ -25,6 +25,7 @@ expected_html = """<html>
     
 
     <p style="color:maroon; margin-left:40px">Thanks, you rock!</p>
+
 </body>
 </html>
 """  # noqa
@@ -53,7 +54,8 @@ class EmailTemplateMergeTest(TestCase):
         join date
         Feb. 5, 2007
 
-    Thanks, you rock!"""
+    Thanks, you rock!
+"""
 
     def test_it_should_merge_all_parts_of_a_modularized_template(self):
         context = dict(
@@ -123,10 +125,19 @@ class EmailTemplateMergeTest(TestCase):
     # I can't get this to work because the fallback language has already been determined
     # when the settings module was loaded (and when the merge function was called the first time).
     # I don't know how to solve this without making everything much more dynamic (and cumbersome, and slow).
-    @skip
+    @skip("configuration is too static")
     @override_settings(TEMPLATES_EMAIL={'FALLBACK_LANGUAGE': 'en'})
     def test_it_should_honor_the_default_fallback_language_settings(self):
         merged_email = merge('derived.html', {}, 'jp')
         assert merged_email.template == 'derived-en.html'
         assert merged_email.language == 'en'
         assert merged_email.html == expected_html
+
+    @skip("I believe it is because render-blocks doesn't recurse up the 'extends' chain")
+    def test_it_should_merge_all_parts_of_a_deeply_derived_template(self):
+        context = dict(
+            username='bob',
+            full_name='bobby tables',
+            joindate=date(2007, 2, 5)
+        )
+        merge('derived-twice.html', context, 'en')
