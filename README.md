@@ -15,8 +15,8 @@ A plaintext version of the html is automatically generated from the html (some e
 Requirements
 ------------
 
-* **Python**: 3.4 and over
-* **Django**: Tested with django 1.11
+* Python: 3.4 and over
+* Django: 1.11 and over
 
 
 Possible enhancement
