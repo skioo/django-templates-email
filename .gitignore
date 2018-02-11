@@ -8,6 +8,7 @@ __pycache__
 .tox
 .coverage
 .cache
+.pytest_cache/
 
 # MyPy
 .mypy_cache
