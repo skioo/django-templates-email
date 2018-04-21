@@ -1,7 +1,7 @@
 from datetime import date
 from unittest import skip
 
-from django.template import TemplateDoesNotExist
+from django.template import TemplateDoesNotExist, TemplateSyntaxError
 from django.test import TestCase, override_settings
 from pytest import raises
 
@@ -141,3 +141,11 @@ class EmailTemplateMergeTest(TestCase):
             joindate=date(2007, 2, 5)
         )
         merge('derived-twice.html', context, 'en')
+
+    def test_it_should_report_syntax_error_in_template(self):
+        with raises(TemplateSyntaxError, match='Invalid block tag'):
+            merge('template_with_syntax_error.html', {}, 'en')
+
+    def test_it_should_report_runtime_error(self):
+        with raises(TypeError, match='is not iterable'):
+            merge('template_with_runtime_error.html', {'l': 1}, 'en')
