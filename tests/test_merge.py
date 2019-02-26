@@ -14,8 +14,7 @@ expected_html = """<html>
     <p style="color:maroon; margin-left:40px">Hi bobby tables,</p>
 
     <p style="color:maroon; margin-left:40px">You just signed up for my website, using:
-    </p>
-<dl>
+    </p><dl>
         <dt>username</dt>
         <dd>bob</dd>
 
@@ -27,8 +26,7 @@ expected_html = """<html>
     <p style="color:maroon; margin-left:40px">Thanks, you rock!</p>
 
 </body>
-</html>
-"""  # noqa
+</html>"""  # noqa
 
 
 class EmailTemplateMergeTest(TestCase):
@@ -84,8 +82,7 @@ class EmailTemplateMergeTest(TestCase):
     <p style="color:maroon; margin-left:40px">Bonjour bobby tables,</p>
 
     <p style="color:maroon; margin-left:40px">Vous venez de vous inscrire a mon site:
-    </p>
-<dl>
+    </p><dl>
         <dt>nom d'utilisateur</dt>
         <dd>bob</dd>
 
@@ -96,8 +93,7 @@ class EmailTemplateMergeTest(TestCase):
 
     <p style="color:maroon; margin-left:40px">Merci!</p>
 </body>
-</html>
-"""  # noqa
+</html>"""  # noqa
 
     def test_it_should_raise_an_exception_if_there_is_no_template_for_the_language(self):
         with raises(TemplateDoesNotExist):

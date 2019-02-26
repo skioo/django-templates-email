@@ -2,7 +2,9 @@ django-templates-email
 ======================
 
 [![Build Status](https://travis-ci.org/skioo/django-templates-email.svg?branch=master)](https://travis-ci.org/skioo/django-templates-email)
-
+[![PyPI version](https://badge.fury.io/py/django-templates-email.svg)](https://badge.fury.io/py/django-templates-email)
+[![Requirements Status](https://requires.io/github/skioo/django-templates-email/requirements.svg?branch=master)](https://requires.io/github/skioo/django-templates-email/requirements/?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Generates the content needed to send a transactional email, based on a template:
 
@@ -15,8 +17,8 @@ A plaintext version of the html is automatically generated from the html (some e
 Requirements
 ------------
 
-* Python: 3.4 and over
-* Django: 1.11 and over
+* Python: 3.6 and over
+* Django: 2.0 and over
 
 
 Possible enhancement
