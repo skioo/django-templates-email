@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='django-templates-email',
-    version='1.0.0',
+    version='1.0.1',
     description='',
     long_description='',
     author='Nicholas Wolff',
@@ -13,7 +13,7 @@ setup(
         'templates_email',
     ],
     install_requires=[
-        'Django>=2.0,<2.2',
+        'Django>=2.0',
         'structlog',
         'typing',
         'django-render-block',
@@ -27,6 +27,7 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
